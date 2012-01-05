@@ -1,0 +1,14 @@
+.add_h_and_f {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #E3E3E3;
+    float: left;
+    padding: 10px;
+    clear: both;
+    margin: 0px;
+}
+
+.add_h_and_f textarea{
+	width: 390px; 
+	margin: 0px;
+	height: 40px;
+}

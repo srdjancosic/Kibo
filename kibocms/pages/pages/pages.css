@@ -1,0 +1,105 @@
+.leaf_content {
+	width: 100px;
+	float: left;
+	border: 1px solid #d3d3d3;
+	padding: 5px;
+	margin: 5px;
+	cursor: move;
+}
+
+.leaf_content:hover {
+	background: #f8f8f8;
+}
+
+
+/****/
+
+.portlete {
+	background: #f8f8f8;
+	border: 1px solid #e3e3e3;
+	padding: 10px 10px 10px 10px;
+	width: 400px;
+	float: left;
+	clear: both;
+}
+
+.leaf_destination {
+	float: left;
+	width: 400px;
+	border: 1px solid #e0e0e0;
+	background: #ffffff;
+	clear: both;
+}
+
+.leaf_destination h2 {
+    clear: both;
+    color: #666666;
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    margin: 5px 0px 0px 10px;
+    text-transform: uppercase;
+}
+
+.portlete p {
+	float: left;
+	width: 240px;
+	clear: both;
+}
+
+.portlete p.submit {
+	width: 220px;
+}
+
+.leaf_destination li {
+	float: left;
+	width: 370px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #e0e0e0;
+	background: #ffffff;
+}
+
+.leaf_destination li input {
+	background: #ffffff;
+}
+
+.leaf_destination label {
+	width: 80px;
+}
+
+ul.sortable {
+	min-height: 30px;
+	list-style: none;
+	margin: 0px 10px;
+	padding: 20px 0px 0px 0px;
+	float: left;
+	width: 380px;
+	clear: both;
+}
+
+img.remove {
+	float: right;
+	width: 16px;
+	margin: 3px;
+	cursor: pointer;
+}
+
+.ui-state-default2 {
+	background: url("/kibocms/preset/assets/drop_here_default.png") no-repeat;
+}
+
+.ui-state-hover2 {
+	background: url("/kibocms/preset/assets/drop_here.png") no-repeat;
+}
+
+.ui-state-highlight2 { height: 35px; line-height: 1.2em; border: 1px solid #fcefa1; background: #fbf9ee; }
+
+.handler { cursor: move; }
+
+.add_h_and_f {
+	float:left;
+	padding: 10px;
+	background: #F8F8F8;
+	border: 1px solid #E3E3E3;
+}

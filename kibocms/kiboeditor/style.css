@@ -1,0 +1,138 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Tahoma";
+	font-size: 12px;
+	width: 100%;
+}
+textarea {
+	background: #FFFFFF;
+	/*
+	color: #3ae000;
+	font-family: "Courier new";
+	font-size: 12px;
+	*/
+	width: 99%;
+	height: 510px;
+	float: left;
+	clear: both;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid #b3b3b3;
+	letter-spacing: 1px;
+}
+a {
+	color: #0095DA;
+	text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+.CodeMirror {background: #FFFFFF; font-size: 13px; height: 410px; }
+.activeline {background: #f0fcff !important;}
+.searched {background: yellow;}
+
+input.text {
+	padding: 2px;
+	border: 1px solid #d3d3d3;
+}
+input.submit {
+	border: 1px solid #0095DA;
+	background: #d4f1ff;
+}
+
+#folderContent {
+	float: left;
+	width: 900px;
+	height: 450px;
+	overflow: auto;
+	margin: 10px 0px 0px 10px;
+	padding: 10px;
+	background: #eeeeee;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 12px;
+	display: none;
+}
+
+#folderContent a {
+	width: auto;
+	float: left;
+	padding: 5px;
+	border: 1px solid #d3d3d3;
+	background: #fafafa;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin-top: 5px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#folderContent a img {
+	width: 64px;
+	height: 64px;
+}
+
+#folderContent a:hover, #folderContent a.active {
+	border: 1px solid #0095DA;
+	background: #d4f1ff;
+}
+
+#folderContent input#query {
+	border: 1px solid #d3d3d3;
+	width: 100px;
+	padding: 5px;
+	font-family: Arial;
+	color: #666666;
+	float: right;
+	margin: 0px 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin-top: 5px;
+}
+
+button.searchButton {
+	width: auto;
+	float: right;
+	padding: 5px;
+	border: 1px solid #d3d3d3;
+	background: #fafafa;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin-top: 5px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+
+/***
+BROWSER
+***/
+
+#browser {
+	width: 150px;
+	height: 460px;
+	padding: 0px 10px;
+	background: #FFFFFF;
+	border: 5px solid #eeeeee;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	float: left;
+	clear: both;
+	overflow: auto;
+	margin: 10px 0px 0px 0px;
+}
+
+li span.file {
+	cursor: pointer;
+}
+
+li span.opened {
+	font-weight: bold;
+}

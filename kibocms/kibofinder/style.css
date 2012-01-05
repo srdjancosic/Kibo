@@ -1,0 +1,247 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Arial";
+	font-size: 12px;
+	background: #ffffff;
+}
+input, select, label {
+	font-family: "Arial";
+	font-size: 12px;
+}
+a {
+	color: #0095DA;
+	text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+a.renameFile { cursor: pointer; }
+
+h3 {
+	margin: 0px;
+	width: auto;
+	font-size: 12px;
+}
+img {
+	border: 0px;
+	padding: 2px;
+}
+#easyTooltip { 
+	padding: 5px; 
+	box-shadow: 0px 0px 5px #000000; 
+	-moz-box-shadow: 0px 0px 5px #000000; 
+	-webkit-box-shadow: 0px 0px 5px #000000; 
+	background: #000000; 
+	color: #ffffff;
+	border-radius: 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px;
+	z-index: 10000;
+}
+
+
+label {
+	width: 80px;
+	float: left;
+	clear: both;
+}
+
+/**
+top
+**/
+
+#newFile {
+	float: left;
+	margin: 0px 10px;
+	width: 700px;
+}
+
+#newFolder {
+	width: 250px;
+	flaot: left;
+	clear: both;
+}
+
+#hLeft {
+	width: 250px;
+	float: left;
+	clear: both;
+	padding: 5px;
+	margin: 4px;
+	border: 1px solid #dddddd;
+	z-index: 100;
+	position: relative;
+}
+
+#folderSelect {
+	width: 250px;
+	float: left;
+	clear: both;
+}
+
+select#folder_list {
+	float: left;
+	clear: both;
+	padding: 3px;
+	border: 1px solid #e3e3e3;
+	width: 230px;
+	margin: 4px;
+}
+
+#loading {
+	width: 150px;
+	height: 20px;
+	display: block;
+	float: left;
+	display: none;
+}
+
+#content {
+	float: left;
+	width: 250px;
+	margin: 4px;
+}
+
+#folderOptions {
+	float: left;
+	width: 230px;
+	padding: 0px 5px 10px 5px;
+	border-bottom: 2px dashed #e3e3e3;
+}
+#folderOptions img {
+	margin-bottom: -3px;
+	float: left;
+}
+#folderOptions h3 {
+	font-size: 12px;
+	margin: 3px;
+	width: auto;
+	float: left;
+	clear: both;
+}
+#folderOptions a {
+	padding: 3px;
+	float: left;
+	width: auto;
+}
+
+
+input {
+	float: left;
+	margin-right: 3px;
+}
+
+input.text {
+	padding: 5px;
+	border: 1px solid #e3e3e3;
+	color: #666666;
+	background: #ffffff;
+	width: 135px;
+}
+
+input.button , button.button {
+	background: url("/cloud/preset/img/button-input.png") repeat-x bottom;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #dddddd;
+	color: #666666;
+	cursor: pointer;
+	float: right;
+	margin: 5px 15px 0px 0px;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 0px 5px 3px 5px;
+}
+
+input.sf {
+	padding: 5px;
+	border: 1px solid #0095DA;
+	color: #0095DA;
+	background: #fafafa;
+	width: 30px;
+}
+
+span {
+	float: left;
+	margin-right: 3px;
+}
+
+#rightSide {
+	width: 240px;
+	height: 400px;
+	overflow: auto;
+	float: left;
+	clear: both;
+	margin: 10px 0px 0px 0px;
+	
+}
+
+#rightSide h1 {
+	float: left;
+	clear: both;
+	width: 90%;
+	color: #4c4c4c;
+	font-size: 20px;
+	margin: 3px;
+}
+
+#rightSide .fileInfoContent {
+	float: left;
+	clear: both;
+	margin-left: 10px;
+}
+
+#rightSide .fileInfoContent a {
+	width: auto;
+	padding: 5px;
+	float: left;
+	clear: both;
+	margin-left: 10px;
+}
+
+#rightSide .fileInfoContent a.editImage , #rightSide .fileInfoContent a.previewImage {
+	font-size: 11px;
+	color: #666666;
+	float: left;
+	clear: none;
+	padding-top: 7px;
+}
+
+
+.fileInfoContent img {
+	margin: 10px 0px;
+}
+
+#folderContent {
+	float: left;
+	width: 65%;
+	height: 500px;
+	overflow: auto;
+	margin: 10px 0px 0px 10px;
+	background: #eeeeee;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-size: 10px;
+}
+
+#folderContent a {
+	width: auto;
+	float: left;
+	padding: 5px;
+	border: 1px solid #d3d3d3;
+	background: #fafafa;
+	margin: 5px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#folderContent a img {
+	width: 100px;
+	height: 100px;
+}
+
+#folderContent a:hover, #folderContent a.active {
+	border: 1px solid #0095DA;
+	background: #d4f1ff;
+}

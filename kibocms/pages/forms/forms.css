@@ -1,0 +1,47 @@
+
+ul.sortable {
+	min-height: 30px;
+	list-style: none;
+	margin: 0px;
+	padding: 20px;
+	float: left;
+	width: 380px;
+	clear: both;
+	background: #ffffff;
+	border: 1px solid #d3d3d3;
+}
+
+ul.sortable li {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #d3d3d3;
+	float: left;
+	clear: both;
+	width: 100%;
+}
+
+ul.sortable li a , ul.sortable li img {
+	float: right;
+	padding: 0px 5px;
+}
+
+img.remove {
+	float: right;
+	width: 16px;
+	margin: 3px;
+	cursor: pointer;
+}
+
+#field_edit {
+	float: left;
+	margin-left: 20px;
+	border: 1px solid #d3d3d3;
+	background: #ffffff;
+	padding: 20px;
+	display: none;
+}
+
+
+.ui-state-highlight2 { height: 35px; line-height: 1.2em; border: 1px solid #fcefa1; background: #fbf9ee; }
+
+.handler { cursor: move; }

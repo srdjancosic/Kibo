@@ -1,0 +1,50 @@
+
+ul.sortable {
+	min-height: 30px;
+	list-style: none;
+	margin: 10px;
+	padding: 0px;
+	float: left;
+	width: 260px;
+	clear: both;
+}
+
+
+ul.sortable li {
+	float: left;
+	width: 245px;
+	min-height: 30px;
+	line-height: 30px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #e0e0e0;
+	background: #ffffff;
+}
+
+ul.sortable li p {
+	width: 230px;
+}
+
+ul.sortable li img {
+	float: right;
+	width: 16px;
+	margin: 7px 3px 0px 3px;
+	cursor: pointer;
+}
+
+ul.sortable li ul li {
+	width: 95%;
+}
+
+
+ul.sortable li img.handler { cursor: move; }
+
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+.ui-state-default2 { 
+	background: url("/kibocms/preset/assets/drop_here_default.png") no-repeat top center #ffffff; 
+}
+
+.ui-state-hover2 {
+	background: url("/kibocms/preset/assets/drop_here.png") no-repeat top center #ffffff;
+}

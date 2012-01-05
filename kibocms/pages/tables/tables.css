@@ -1,0 +1,51 @@
+.columne_list li{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    float: left;
+    min-height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 320px;
+    clear: both;
+}
+
+.columne_list li a{
+	float:right;
+	margin-top: 6px;
+	margin-left: 6px;
+}
+
+.columne_list li label{
+	margin-top: 6px;
+}
+
+.half{
+	float:left;
+	width: 50%;
+}
+
+.ui-tabs {
+	float:left;
+}
+.col_details{
+	padding: 5px;
+	background: none repeat scroll 0 0 #F8F8F8;
+    border: 1px solid #E3E3E3;
+    margin:3px;
+    margin-top: 7px;
+}
+
+.buttons_1{
+	clear:none;
+	float:right;
+}
+
+.table_wrap{
+	padding:10px;
+	border: 1px solid #E0E0E0;
+	background: none repeat scroll 0 0 #FFFFFF;
+	float: left;
+	margin-bottom: 10px;
+	clear: boath;
+	
+}

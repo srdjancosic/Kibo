@@ -1,0 +1,15 @@
+/* CSS 3 setup */
+/* ----------- */
+
+@font-face {
+	font-family: "Modata";
+	src: url('Modata.ttf');
+}
+
+fieldset, input, textarea, select, a.button, a.button_table, .meta ul li a, ul.nav li li a:hover, p.main input, input.login, table, .message,  div.wysiwyg {
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;*/
+}
+.portlet {
+	zoom:1;
+}
