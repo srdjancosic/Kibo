@@ -1,7 +1,7 @@
 <?php
 	require("library/config.php");
 
-	
+	// samo da vidimo da li radi
 	$_SESSION['included_views'] = false;
 	
 	$db = new Database();
