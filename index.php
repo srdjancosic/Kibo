@@ -1,7 +1,6 @@
 <?php
 	require("library/config.php");
 
-	
 	$_SESSION['included_views'] = false;
 	
 	$db = new Database();
