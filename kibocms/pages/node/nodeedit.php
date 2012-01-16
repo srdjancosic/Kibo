@@ -66,16 +66,43 @@
 					<label>URL:</label>
 					<input type="text" class="text" id="url" name="url[<?= $lang_id; ?>]" value="<?= $values['url']; ?>">
 				</p>
-				<a href="#" class="showhide_setting" lang="<?= $lang_id; ?>">Show/Hide settings</a><br /><br />
+				<a href="#" class="showhide_setting" lang="<?= $lang_id; ?>" show_or_hide="0">Show/Hide settings</a><br /><br />
 				<div class= "add_h_and_f" id="node_setting_<?= $lang_id; ?>" style="display: none;">
-					<p>
-						<label>Content keywords</label>
-						<textarea name="node_keywords[<?= $lang_id;?>]"><?= $values['node_keywords'];?></textarea>
-					</p>
-					<p>
-						<label>Content description</label>
-						<textarea name="node_description[<?= $lang_id;?>]"><?= $values['node_description'];?></textarea>
-					</p>
+					<div class="half">
+						<p>
+							<label>Content keywords</label>
+							<textarea name="node_keywords[<?= $lang_id;?>]"><?= $values['node_keywords'];?></textarea>
+						</p>
+						<p>
+							<label>Content description</label>
+							<textarea name="node_description[<?= $lang_id;?>]"><?= $values['node_description'];?></textarea>
+						</p>
+					</div>
+					<div class="half right" id="tags_<?= $lang_id?>">
+						<p>
+							<label>Tag:</label>
+							<input type="text" name="node_tag_<?= $values['id'];?>" id="node_tag_<?= $values['id']; ?>" >
+							<input class="submit" type="button" id="addTag" lang_id="<?= $lang_id;?>" node_id="<?= $values['id'];?>" value="Add">
+						</p>
+						<p>
+							<label>Tags:</label>
+							<img src="/kibocms/preset/assets/loading.gif" id="loader2_<?= $lang_id;?>" border="0" alt="" style="display: none; margin-bottom: -4px; width: 14px; height:14px;">
+						</p>
+							<ul>
+								<?	
+									$query = $db->execQuery("SELECT * FROM tags WHERE node_id = '".$values['id']."'");
+									while($data=mysql_fetch_array($query, MYSQL_ASSOC)){
+										echo "<li id=\"tag_".$data['id']."\">";
+										echo "<label>".$data['name']."</label>";?>
+										<a id="remove_id" onclick="removeTag('<?= $data['id'];?>','<?= $values['id'];?>','<?= $lang_id;?>');" href="#">
+										<img src="/kibocms/preset/actions_small/Trash.png">
+										</a>
+										<?
+										echo "</li>";
+									}
+								?>
+							</ul>
+					</div>
 				</div>
 				<p>
 					<label>Picture:</label>
@@ -108,9 +135,9 @@
 					
 				?>
 			</div>
-				<?php
+			<?php
 			} // end of lang arr
-				?>
+			?>
 			</div>
 			<p>
 				<input type="submit" value="Save" class="submit">

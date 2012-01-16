@@ -45,9 +45,12 @@
 				
 				$languages = $f->getActiveLanguages();
 				foreach ($languages as $langId => $langName) {
-					
+					$query1= $db->execQuery("SELECT * FROM category WHERE ref_id = '$parent' AND lang_id = '$langId'");
+					$data1= mysql_fetch_array($query1, MYSQL_ASSOC);
+					$parent1=$data1['id'];
+					$page_id1=$data1['page_id'];
 					$db->execQuery("INSERT INTO ".DB_PREFIX."category (`name`, `url`, `href`, `parent`, `lang_id`, `page_id`, `has_dimensions`, `ref_id`) 
-													VALUES ('$langName $name', '$url', '$href', '$parent', '$langId', '$page_id', '$has_dimensions', '$ref_id')");
+													VALUES ('$langName $name', '$url', '$href', '$parent1', '$langId', '$page_id', '$has_dimensions', '$ref_id')");
 					
 				}
 				

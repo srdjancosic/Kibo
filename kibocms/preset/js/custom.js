@@ -11,14 +11,8 @@
 				//tooltip
 				$(".tooltip").easyTooltip();
 		
-				$(".box_1").hover(
-				function() {
-					$(this).addClass("defaultState");
-				}, 
-				function() {
-					$(this).removeClass("defaultState");
-				}
-				);
+				$(".box_1").live("mouseover", function() { $(this).addClass("defaultState"); } );
+				$(".box_1").live("mouseout", function() { $(this).removeClass("defaultState"); } );
 				
 				// Check all the checkboxes when the head one is selected:
 				$('.checkall').click(

@@ -20,7 +20,7 @@
 			if(strlen($name) != 0){
 				$db->execQuery("CREATE TABLE $table_name (id int(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY(id))");
 				$f->setMessage("New table created!");
-				$f->redirect("tableedit.php?name=".$table_name);
+				$f->redirect("tableedit.php?name=".$name);
 			}else {
 				$f->setMessage("You must enter table name!", "error");
 				$f->redirect("index.php");

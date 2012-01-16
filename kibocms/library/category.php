@@ -8,10 +8,10 @@ class Category extends Functions {
 		
 	}
 	
-	function listCategoriesSelect($selected = 0) {
+	function listCategoriesSelect($selected = 0, $lang_id) {
 	global $id; 
-	
-		$query = Database::execQuery("SELECT * FROM ".DB_PREFIX."category");
+		
+		$query = Database::execQuery("SELECT * FROM ".DB_PREFIX."category WHERE lang_id = '$lang_id'" );
 		while ($data = mysql_fetch_array($query, MYSQL_ASSOC)) {
 			if($id != $data['id']) {
 				?>

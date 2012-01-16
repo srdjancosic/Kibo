@@ -28,7 +28,7 @@
 			<select id="select_category" class="styled">
 				<option value="0">None</option>
 				<?php
-					$c->listCategoriesSelect($parent);
+					$c->listCategoriesSelect($parent, $lang_id);
 				?>
 			</select>
 			
@@ -68,7 +68,7 @@
 						<select id="parent" name="parent" class="styled">
 							<option value="0">-----</option>
 							<?php
-								$c->listCategoriesSelect();
+								$c->listCategoriesSelect(0 ,$lang_id);
 							?>
 						</select>
 					</p>
@@ -77,7 +77,7 @@
 						<select id="page_id" name="page_id" class="styled">
 							<option selected value="0">-----</option>
 							<?php
-								$c->listPagesSelect();
+								$c->listPagesSelect("", $lang_id);
 							?>
 						</select>
 					</p>
