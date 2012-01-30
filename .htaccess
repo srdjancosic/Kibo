@@ -3,21 +3,16 @@ RewriteEngine on
 RewriteRule ^kibocms/$ kibocms/index.php [L]
 RewriteRule ^kibocms/kiboeditor/?$ kibocms/kiboeditor/index.php [L]
 RewriteRule ^kibocms/kibofinder/?$ kibocms/kibofinder/index.php [L]
+RewriteRule ^kibocms/(([^\n]+)/)*$ kibocms/$1 [L]
 
-RewriteRule ^([a-z]{3})/plugin/([^/\.]+)/(([^\.]+))?/? index.php?lang_code=$1&plugin=$2&plugin_options=$4 [L]
-
-RewriteRule ^([a-z]{3})/(([^/\.]+))?/?$ index.php?lang_code=$1&category=$2 [L]
-RewriteRule ^([a-z]{3})/([^/\.]+)/([a-z]+)/([0-9])+/?$ index.php?lang_code=$1&category=$2&page_num=$4 [L]
-
-RewriteRule ^([a-z]{3})/([^/\.]+)/([^/\.]+)/?$ index.php?lang_code=$1&category=$2&node=$3 [L]
-RewriteRule ^([a-z]{3})/([^/\.]+)/([^/\.]+)/([a-z]+)/([0-9])+/?$ index.php?lang_code=$1&category=$2&page_num=$4&node=$3 [L]
+# multiple languages
+RewriteRule ^([a-z]{3})/([^/\.]+)/?$ index.php?lang_code=$1&category=$2 [L] # category or page url 
+RewriteRule ^([a-z]{3})/([^/\.]+)/[a-z]+/([0-9]+)/?$ index.php?lang_code=$1&category=$2&page_num=$3 [L] # category url with page numeration
+RewriteRule ^([a-z]{3})/([^/\.]+)/([^/\.]+)-([0-9]+)/?$ index.php?lang_code=$1&category=$2&node=$3&node_id=$4 [L] # article in category with article id
+RewriteRule ^([a-z]{3})/([^/\.]+)/(([^\.]+)/?)+$ index.php?lang_code=$1&category=$2&options=$3 [L] # page with custom url options
 
 # one language
-
-RewriteRule ^plugin/([^/\.]+)/(([^\.]+))?/? index.php?lang_code=&plugin=$1&plugin_options=$3 [L]
-
-RewriteRule ^(([^/\.]+))?/?$ index.php?lang_code=&category=$1 [L]
-RewriteRule ^([^/\.]+)/([a-z]+)/([0-9]+)/?$ index.php?lang_code=&category=$1&page_num=$3 [L]
-
-RewriteRule ^([^/\.]+)/([^/\.]+)/?$ index.php?lang_code=&category=$1&node=$2 [L]
-RewriteRule ^([^/\.]+)/([^/\.]+)/([a-z]+)/([0-9]+)/?$ index.php?lang_code=&category=$1&page_num=$3&node=$2 [L]
+RewriteRule ^([^/\.]+)/?$ index.php?lang_code=&category=$1 [L] # category or page url 
+RewriteRule ^([^/\.]+)/[a-z]+/([0-9]+)/?$ index.php?lang_code=&category=$1&page_num=$2 [L] # category url with page numeration
+RewriteRule ^([^/\.]+)/([^/\.]+)-([0-9]+)/?$ index.php?lang_code=&category=$1&node=$2&node_id=$3 [L] # article in category with article id
+RewriteRule ^([^/\.]+)/(([^\.]+)/?)+$ index.php?lang_code=&category=$1&options=$2 [L] # page with custom url options

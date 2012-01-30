@@ -149,6 +149,10 @@ ul.nav li li a:hover {
  color:#000;
 }
 
+#sidebar ul li a.active{
+ color:#000;
+}
+
 #footer {
 	 background:#202020;
  border-top:3px solid #000;

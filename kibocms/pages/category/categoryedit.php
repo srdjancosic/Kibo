@@ -77,7 +77,7 @@ $(document).ready(function() {
 							<select id="parent" name="parent[<?= $lang_arr['id']; ?>]" class="styled">
 								<option value="0">-----</option>
 								<?php
-									$c->listCategoriesSelect($values['parent']);
+									$c->listCategoriesSelect($values['parent'], $lang_arr['id']);
 								?>
 							</select>
 						</p>

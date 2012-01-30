@@ -26,7 +26,7 @@ class Database {
 	}
 	
 	function getValue($field, $table, $key, $value) {
-		$query = mysql_query("SELECT `$field` FROM ".DB_PREFIX."`$table` WHERE `$key` = '$value'") or die(mysql_error($this->dbLink));
+		$query = mysql_query("SELECT `$field` FROM `".DB_PREFIX.$table."` WHERE `$key` = '$value'") or die(mysql_error($this->dbLink));
 		$row = mysql_fetch_array($query);
 		
 		return $row["$field"];

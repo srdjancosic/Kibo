@@ -76,7 +76,7 @@
 					while($data = mysql_fetch_array($query)){
 						list($first, $last) = explode('_',$data['0']);
 						if($first == 'c' ){?>
-						<option value="<?= $data['0']?>" ><?= $data['0']; ?></option>
+						<option value="<?= $data['0']?>" ><?= $last; ?></option>
 					<?
 						}
 					}

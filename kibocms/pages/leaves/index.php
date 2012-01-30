@@ -59,7 +59,7 @@
 				<select id="parent" name="parent" class="styled">
 					<option value="0">-----</option>
 					<?php
-						$l->listLeavesSelect();
+						$l->listLeavesSelect(0, $lang_id);
 					?>
 				</select>
 			</p>

@@ -29,17 +29,17 @@
 				$lang_arr = $f->getActiveLanguages();
 				foreach ($lang_arr as $lang_id => $langName) {
 					
-					$category = $f->getCategoryByLang($category, $lang_id);
+					$category1 = $f->getCategoryByLang($category, $lang_id);
 					$db->execQuery("INSERT INTO ".DB_PREFIX."node (`name`, `url`, `date`, `lang_id`, `category`, `ref_id`) 
-													VALUES ('$langName $name', '$url', '$dateNow', '$lang_id', '$category', '$last_insert')");
+													VALUES ('$langName $name', '$url', '$dateNow', '$lang_id', '$category1', '$last_insert')");
 				}
 				
 				
-				$f->setMessage("New content created!");
+				$f->setMessage("New article created!");
 			} else {
-				$f->setMessage("You must enter content title!", "error");
+				$f->setMessage("You must enter article title!", "error");
 			}
-			$f->redirect("nodeedit.php?id=".$last_insert."&".$catURL);
+			$f->redirect("nodeedit.php?id=".$last_insert."&catId=".$category);
 			break;
 		case "edit":
 			
@@ -79,9 +79,9 @@
 						}
 					}
 					
-					$f->setMessage("Content edited!");
+					$f->setMessage("Article edited!");
 				} else {
-					$f->setMessage("You must enter content title!", "error");
+					$f->setMessage("You must enter article title!", "error");
 				}
 				
 			} // end of foreach
@@ -93,9 +93,17 @@
 			$id = $f->getValue("id");
 			
 			$db->execQuery("DELETE FROM ".DB_PREFIX."node WHERE id = '$id'");
+			if($db->numRows("SELECT * FROM node WHERE ref_id ='$id'")>0){
+				$query = $db->execQuery("SELECT * FROM node WHERE ref_id ='$id'");
+				while($data = mysql_fetch_array($query, MYSQL_ASSOC)){
+					$db->execQuery("DELETE FROM tags WHERE node_id = ".$data['id']);
+				}
+			}
 			$db->execQuery("DELETE FROM ".DB_PREFIX."node WHERE ref_id = '$id'");
+			$db->execQuery("DELETE FROM tags WHERE node_id = '$id'");
 			
-			$f->setMessage("Content deleted!");
+			
+			$f->setMessage("Article deleted!");
 			$f->redirect("index.php?".$catURL);
 			break;
 		case "addCustomField":
@@ -158,6 +166,50 @@
 			$_SESSION['order_type_nodes'] = $orderType;
 			$f->redirect("index.php?catId=".$catId);
 			
+			break;
+		case "showMore":
+			$limit= $f->getValue("limit");
+			$catId = $f->getValue("catId");
+			$lang_id = $f->getValue("lang_id");
+			$offset = $f->getValue("offset");
+			$n->listNodesView($offset, $limit, $catId);
+			
+			break;
+			
+		case "showMoreButton":
+			$limit= $f->getValue("limit");
+			$catId = $f->getValue("catId");
+			$offset = $f->getValue("offset");
+			$lang_id = $f->getValue("lang_id");
+			$count = $f->getValue("count");
+			if($db->numRows("SELECT * FROM node WHERE ref_id = '0' AND category = '$catId'")>$offset+$limit){
+				?>
+				<input class="submit" id="showMore" type="button" onclick="showMore(<?= $offset+$limit;?>,<?= $limit?>,<?= $lang_id;?>, <?= $catId;?>);" value="Show more">
+				<?
+			}
+			break;
+		case addTag:
+			$node_id = $f->getValue('nodeId');
+			$name = $f->getValue('name');
+			$lang_id = $f->getValue('lang_id');
+			$url = $f->generateUrlFromText($name);
+			
+			if($name !="" && $db->numRows("SELECT * FROM tags WHERE name= '$name' AND node_id = '$node_id'")== 0){
+				$db->execQuery("INSERT INTO tags (node_id, name, url) VALUES('$node_id', '$name', '$url')");
+				?>
+				<li id="tag_<?= $db->insertId;?>">
+					<label><?= $name;?></label>
+					<a id="remove_id" onclick="removeTag('<?= $db->insertId;?>','<?= $node_id;?>', '<?= $lang_id;?>');" href="#">
+						<img src="/kibocms/preset/actions_small/Trash.png">
+					</a>
+				</li>
+			<?
+			}
+			break;
+		case removeTag:
+			$id = $f->getValue('id');
+			$node_id = $f->getValue('node_id');
+			$db->execQuery("DELETE FROM tags WHERE id='$id'");
 			break;
 	}
 	

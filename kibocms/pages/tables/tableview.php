@@ -104,6 +104,7 @@
 				
 				
 					<input class="submit" type="submit" value="Insert" style="margin-top: 0px; clear:left;">
+					<input class="submit" type="button" value="Truncate" onclick="confirm('Are you sure?') ? location.href='tablework.php?action=truncate&name=<?= $table_name?>' : '';">
 				</form>
 				</div>
 			</div>

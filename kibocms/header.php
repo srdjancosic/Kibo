@@ -10,6 +10,27 @@
 					<a href="/kibocms/logout.php">Logout</a>
 				</li>
 				<li>
+					<?php
+					if($f->adminAllowed("code_editor", "edit")){
+					?>
+						<a href="/kibocms/emptyDatabase.php" onclick="return confirm('Are you sure?');">Empty database</a>
+					<?
+					}
+					?>
+				</li>
+				<?php
+	        	if($f->adminAllowed("settings", "view")) {
+	        	?>
+	        		<li><a href="/kibocms/pages/settings/">Settings</a></li>
+	       		 <?php
+	        	}
+	        		if($f->adminAllowed("admins", "view")) {
+	        	?>
+	        		<li><a href="/kibocms/pages/admins/">Admins</a></li>
+	        	<?php 
+	        		}
+	        	?>
+				<li>
 					<?php if($f->adminAllowed("code_editor", "edit")) { ?><a href="#" onclick="kiboEditorAlone('/kibocms/kiboeditor/');">Code editor</a><?php } ?>
 					<a href="#" onclick="kiboFinderAlone('/kibocms/kibofinder/', '');">File manager</a>
 				</li>
@@ -38,17 +59,19 @@
 	    	$newsletter_menu = ($currentPlace == "newsletter") ? "class=\"active\"" : "";
 	    	?>
 	        <li><a <?= $cat_menu; ?> href="/kibocms/pages/category/">Categories</a></li>
-	        <li><a <?= $nodes_menu; ?> href="/kibocms/pages/node/">Content</a></li>
+	        <li><a <?= $nodes_menu; ?> href="/kibocms/pages/node/">Articles</a>
+	        	<ul>
+	        		<?
+	        		$nodes_submenu = new Node();
+	        		$nodes_submenu->listCategoryList();
+	        		?>
+	        	</ul>
+	        </li>
 	        <li><a <?= $leaves_menu; ?> href="/kibocms/pages/leaves/">Elements</a></li>
 	        <?php /*<li><a <?= $layouts_menu; ?> href="/kibocms/pages/layouts/">Layouts</a></li> */ ?>
 	        <li><a <?= $pages_menu; ?> href="/kibocms/pages/pages/">Pages</a></li>
 	        
 	        <?php
-	        if($f->adminAllowed("settings", "view")) {
-	        ?>
-	        	<li><a <?= $settings_menu; ?> href="/kibocms/pages/settings/">Settings</a></li>
-	        <?php
-	        }
 	        if($f->adminAllowed("html", "edit")) {
 	        ?>
 	        	<li><a <?= $html_menu; ?> href="/kibocms/pages/html/">HTML Content</a></li>
@@ -59,15 +82,7 @@
 	        	<li><a <?= $menu_menu; ?> href="/kibocms/pages/menu/">Menu</a></li>
 	        <?php
 	        }
-	        if($f->adminAllowed("admins", "view")) {
-	        ?>
-	        	<li><a <?= $admins_menu; ?> href="/kibocms/pages/admins/">Admins</a></li>
-	        <?php 
-	        }
 	        /*<li><a <?= $plugins_menu; ?> href="/kibocms/plugin/">Plugins</a></li> */ ?>
-	        
-	        
-	        <li><a <?= $users_menu; ?> href="/kibocms/pages/users/">Users</a></li>
 	        <?php
 	        if($f->adminAllowed("user_groups", "edit")) {
 	        ?>

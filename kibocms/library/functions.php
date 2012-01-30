@@ -70,7 +70,7 @@
 			$strText = str_replace("č", "c", $strText);
 			$strText = str_replace("Ć", "c", $strText);
 			$strText = str_replace("ć", "c", $strText);
-			$strText = str_replace("Đ", "dj", $strText);
+			$strText = str_replace("�?", "dj", $strText);
 			$strText = str_replace("đ", "dj", $strText);
 			$strText = preg_replace('/[^A-Za-z0-9-]/', ' ', $strText);
 			$strText = preg_replace('/ +/', ' ', $strText);
@@ -90,7 +90,7 @@
 			$strText = str_replace("č", "c", $strText);
 			$strText = str_replace("Ć", "c", $strText);
 			$strText = str_replace("ć", "c", $strText);
-			$strText = str_replace("Đ", "dj", $strText);
+			$strText = str_replace("�?", "dj", $strText);
 			$strText = str_replace("đ", "dj", $strText);
 			$strText = preg_replace('/[^A-Za-z0-9-]/', ' ', $strText);
 			$strText = preg_replace('/ +/', ' ', $strText);
@@ -392,6 +392,7 @@
 		function loggedIn() {
 			$auid = 0;
 			if($_SESSION['auid']==0) {
+				$_SESSION['last_url'] = $_SERVER['REQUEST_URI'];
 				$this->redirect("/kibocms/join.php");
 				die();
 			} else {
@@ -402,6 +403,7 @@
 				if($cc != $cc_db) {
 					$_SESSION['auid'] = 0;
 					$_SESSION['auid_cc'] = "";
+					$_SESSION['last_url'] = $_SERVER['REQUEST_URI'];
 					$this->redirect("/kibocms/join.php");
 					die();
 				}
@@ -419,6 +421,7 @@
 			return (in_array($adminAction, $allowed[$section]));
 		
 		}
+		
 	} // end of class
 	
 	

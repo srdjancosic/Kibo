@@ -5,6 +5,8 @@
     padding: 10px;
     clear: both;
     margin: 0px;
+    width: 858px;
+    display: none;
 }
 
 .add_h_and_f textarea{
@@ -17,3 +19,35 @@ p {
 	clear:both;
 }
 
+.right ul{
+	width: 387px; 
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D3D3D3;
+    clear: both;
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    min-height: 30px;
+    padding: 20px;
+}
+
+.right ul li{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    min-height: 30px;
+    padding: 5px;
+    width: 320px;
+}
+
+.right ul li label{
+	margin-top: 6px;
+}
+
+.right ul li a{
+	float: right;
+    margin-left: 6px;
+    margin-top: 6px;
+}

@@ -115,7 +115,7 @@
 					while($data = mysql_fetch_array($query)){
 						list($first, $last) = explode('_',$data['0']);
 						if($first == 'c' ){?>
-						<option value="<?= $data['0']?>" <?= ($form->table_name == $data[0]) ? "selected=\"selected\"" : "" ?> se><?= $data['0']; ?></option>
+						<option value="<?= $data['0']?>" <?= ($form->table_name == $data[0]) ? "selected=\"selected\"" : "" ?> se><?= $last; ?></option>
 					<?
 						}
 					}
@@ -142,7 +142,7 @@
 				<input type="checkbox" name="file_upload" value="1" <? if($form->file_upload == 1) echo "checked" ?>>File upload
 			</p>			
 			<p>
-				<input type="submit" value="Next" class="submit">
+				<input type="submit" value="Save" class="submit">
 			</p>
 		</form>
 		

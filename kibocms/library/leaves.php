@@ -122,6 +122,9 @@ class Leaves extends Functions {
 					list($c_name, $c_plugin) = explode("|:|", $content);
 					$type = "pluginviews";
 					break;
+				case "tagsearch":
+					$c_tagsearch = $content;
+					break;
 			}
 		include("../../leaf/".$type.".php");
 		

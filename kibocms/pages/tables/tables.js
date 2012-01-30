@@ -27,6 +27,7 @@ $(document).ready(function() {
 		});
 	});
 	
+	
 	$(".editCol").live("click", function() {
 		var name = $(this).attr("name");
 		var table_name = $(this).attr("table_name");

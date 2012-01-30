@@ -122,6 +122,9 @@
 						<div class="leaf_content lc_<?= $lang_id; ?> tooltip" what="leaf_form" title="Drag me to drop zone to add me">
 							<h3>Forms</h3>
 						</div>
+						<div class="leaf_content lc_<?= $lang_id; ?> tooltip" what="leaf_tagsearch" title="Drag me to drop zone to add me">
+							<h3>Tag search</h3>
+						</div>
 						
 						<?php
 						/** PLUGINS **/

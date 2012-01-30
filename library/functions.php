@@ -70,7 +70,7 @@
 			$strText = str_replace("č", "c", $strText);
 			$strText = str_replace("Ć", "c", $strText);
 			$strText = str_replace("ć", "c", $strText);
-			$strText = str_replace("Đ", "dj", $strText);
+			$strText = str_replace("�?", "dj", $strText);
 			$strText = str_replace("đ", "dj", $strText);
 			$strText = preg_replace('/[^A-Za-z0-9-]/', ' ', $strText);
 			$strText = preg_replace('/ +/', ' ', $strText);
@@ -83,7 +83,7 @@
 	    
 	    function recognizeURL($text) {
 	    	$regEx 	= "((www\.|http\.|(www|http|https|ftp|news|file)+\:\/\/)([_.a-z0-9-]+\.[a-zA-Z0-9\/_:@=.+?,##%&~-]*[^.|\'|\# |!|\(|?|,| |>|< |;|\)]))"; 
-	    	$text	= preg_replace($regEx, "<a href='$0'>$0</a>",  $text); 
+	    	$text	= preg_replace($regEx, "<a href='http://$3' target='blanc'>$0</a>",  $text); 
 			
 	    	return $text;
 		}

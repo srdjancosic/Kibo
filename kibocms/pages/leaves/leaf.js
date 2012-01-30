@@ -92,6 +92,10 @@ jQuery(document).ready(function() {
 			var pluginName = jQuery.trim($("#c_plugin_"+langId).val());
 			
 			var string = methodName+"|:|"+pluginName;
+		} else if (type == "tagsearch") {
+			var content = jQuery.trim($("#content_c_"+langId).val());
+			
+			var string = content;
 		}
 		
 		$("#loader_"+langId).show();

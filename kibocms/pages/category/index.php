@@ -28,7 +28,7 @@
 			<select id="select_category" class="styled">
 				<option value="0">None</option>
 				<?php
-					$c->listCategoriesSelect($parent);
+					$c->listCategoriesSelect($parent, $lang_id);
 				?>
 			</select>
 			
@@ -46,11 +46,10 @@
 	?>
 	<div id="sidebar">
 	
-		<h2>Actions</h2>
+		<h2>Create a new category</h2>
 		<div id="accordion">
 			<!-- new node -->
 			<div>
-				<h3><a href="#" title="Novi sadržaj" class="tooltip">New category</a></h3>
 				<form method="POST" action="categorywork.php">
 					<input type="hidden" name="action" value="add">
 					<input type="hidden" name="lang_id" value="<?= $lang_id; ?>">
@@ -68,7 +67,7 @@
 						<select id="parent" name="parent" class="styled">
 							<option value="0">-----</option>
 							<?php
-								$c->listCategoriesSelect();
+								$c->listCategoriesSelect(0 ,$lang_id);
 							?>
 						</select>
 					</p>
@@ -77,7 +76,7 @@
 						<select id="page_id" name="page_id" class="styled">
 							<option selected value="0">-----</option>
 							<?php
-								$c->listPagesSelect();
+								$c->listPagesSelect("", $lang_id);
 							?>
 						</select>
 					</p>

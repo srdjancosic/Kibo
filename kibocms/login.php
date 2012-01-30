@@ -35,7 +35,13 @@
 		$_SESSION['auid'] = $kuid;
 		$_SESSION['auid_cc'] = $checkCode;
 		
-		$f->redirect("index.php");
+		if($_SESSION['last_url'] != ""){
+			$last_url = $_SESSION['last_url'];
+			unset($_SESSION['last_url']);
+			$f->redirect($last_url); 
+		}
+		else 
+			$f->redirect("index.php");
 	}
 	
 ?>
