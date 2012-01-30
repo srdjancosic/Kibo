@@ -108,6 +108,12 @@
 					<input type="checkbox"  <?= in_array("delete", $actions["forms"]) ? 'checked="checked"' : ''; ?> name="forms[3]" value="delete" /> Delete
 				</p>
 				<p>
+					<label>Database</label>
+					<input type="checkbox"  <?= in_array("export", $actions["database"]) ? 'checked="checked"' : ''; ?> name="database[2]" value="export" /> Export
+					<input type="checkbox"  <?= in_array("import", $actions["database"]) ? 'checked="checked"' : ''; ?> name="database[1]" value="import" /> Import
+					<input type="checkbox"  <?= in_array("empty", $actions["database"]) ? 'checked="checked"' : ''; ?> name="database[3]" value="empty" /> Empty
+				</p>
+				<p>
 					<label>Tables</label>
 					<input type="checkbox"  <?= in_array("edit", $actions["tables"]) ? 'checked="checked"' : ''; ?> name="tables[2]" value="edit" /> Edit
 					<input type="checkbox"  <?= in_array("add", $actions["tables"]) ? 'checked="checked"' : ''; ?> name="tables[1]" value="add" /> Add
