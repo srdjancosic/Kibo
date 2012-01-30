@@ -19,9 +19,9 @@
 			$REQUEST_METHOD = $_SERVER["REQUEST_METHOD"];
 			
 			if($REQUEST_METHOD == 'POST') {
-				$takenValue = $HTTP_POST_VARS[$value];
+				$takenValue = $_POST[$value];
 			} else if($REQUEST_METHOD == 'GET') {
-				$takenValue = $HTTP_GET_VARS[$value];
+				$takenValue = $_GET[$value];
 			}
 			
 			$takenValue = $this->stringCleaner($takenValue);
@@ -70,7 +70,7 @@
 			$strText = str_replace("č", "c", $strText);
 			$strText = str_replace("Ć", "c", $strText);
 			$strText = str_replace("ć", "c", $strText);
-			$strText = str_replace("�?", "dj", $strText);
+			$strText = str_replace("�?", "dj", $strText);
 			$strText = str_replace("đ", "dj", $strText);
 			$strText = preg_replace('/[^A-Za-z0-9-]/', ' ', $strText);
 			$strText = preg_replace('/ +/', ' ', $strText);
@@ -90,7 +90,7 @@
 			$strText = str_replace("č", "c", $strText);
 			$strText = str_replace("Ć", "c", $strText);
 			$strText = str_replace("ć", "c", $strText);
-			$strText = str_replace("�?", "dj", $strText);
+			$strText = str_replace("�?", "dj", $strText);
 			$strText = str_replace("đ", "dj", $strText);
 			$strText = preg_replace('/[^A-Za-z0-9-]/', ' ', $strText);
 			$strText = preg_replace('/ +/', ' ', $strText);
