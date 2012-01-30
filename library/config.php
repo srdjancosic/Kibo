@@ -1,11 +1,12 @@
 <?php	
 	ob_clean();
 	session_start();
+	error_reporting(E_ERROR | E_PARSE);
 	
 	define("DB_HOST", "localhost");
-	define("DB_USER", "kiboclou_srki");
-	define("DB_PASS", "savage");
-	define("DB_BASE", "kiboclou_srdjan");
+	define("DB_USER", "root");
+	define("DB_PASS", "");
+	define("DB_BASE", "kibocms");
 	define("DB_PREFIX", "");
 	
 	
@@ -17,7 +18,7 @@
 	function __autoload($class_name) {
 	global $folderPath;
 		
-	    include("/home/kiboclou/domains/kibocloud.com/public_html/srdjan/".$folderPath."library/" . strtolower($class_name) . '.php');
+	    include("C:\\Documents and Settings\\Administrator\\Desktop\\kibocms\\Kibo\\".$folderPath."library\\" . strtolower($class_name) . '.php');
 	}
 	
 	//$_SESSION['lang_id'] = 1;
