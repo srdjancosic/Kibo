@@ -14,13 +14,12 @@
 		}
 
 		function getValue($value){
-		global $_POST, $_GET, $_SERVER;
-	
+		global $HTTP_POST_VARS, $HTTP_GET_VARS, $_SERVER;
+		
 			$REQUEST_METHOD = $_SERVER["REQUEST_METHOD"];
 			
 			if($REQUEST_METHOD == 'POST') {
 				$takenValue = $_POST[$value];
-				
 			} else if($REQUEST_METHOD == 'GET') {
 				$takenValue = $_GET[$value];
 			}
