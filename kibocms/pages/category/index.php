@@ -35,7 +35,7 @@
 			<input type="text" id="search_input">
 			<br clear="all">
 				<?php
-					$c->listCategoriesView();
+					$c->listCategoriesViewBackEnd();
 				?>
 			
 		</div>  <!-- main -->

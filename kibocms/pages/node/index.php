@@ -21,7 +21,7 @@
 				else $class= "";
 				$id=$data1['id'];
 				$num = $db1->numRows("SELECT * FROM node WHERE category = '$id'");
-				echo "<li> <a ".$class."href=\"index.php?catId=".$data1['id']."\">".$data1['name']." (".$num.")</a></li>";
+				echo "<li> <a ".$class."href=\"index.php?catId=".$data1['id']."\">".strip_tags(stripslashes($data1['name']))." (".$num.")</a></li>";
 				if($data1['is_parent']==1)
 					writeSubCategories($data1['id']);
 			}
@@ -169,7 +169,7 @@
 			else $class= "";
 			$id = $data['id'];
 			$num = $db->numRows("SELECT * FROM node WHERE category = '$id'");
-			echo "<li><a ".$class." href=\"index.php?catId=".$data['id']."\">".$data['name']." (".$num.")</a></li>";
+			echo "<li><a ".$class." href=\"index.php?catId=".$data['id']."\">".strip_tags(stripslashes($data['name']))." (".$num.")</a></li>";
 			if($data['is_parent']==1)
 				writeSubCategories($data['id']);
 		}

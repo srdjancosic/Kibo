@@ -94,10 +94,10 @@ class Node extends Functions {
 	}
 	
 	function  listCategoryList(){
-		$query = Database::execQuery("SELECT * FROM ".DB_PREFIX."category WHERE ref_id = '0'");
+		$query = Database::execQuery("SELECT * FROM ".DB_PREFIX."category WHERE ref_id = '0' AND parent = '0'");
 		while ($data = mysql_fetch_array($query, MYSQL_ASSOC)) {
 			?>
-			<li><a href="/kibocms/pages/node/index.php?catId=<?= $data['id'];?>"><?= $data['name']; ?></a></li>
+			<li><a href="/kibocms/pages/node/index.php?catId=<?= $data['id'];?>"><?= strip_tags(stripslashes($data['name'])); ?></a></li>
 			<?php
 		}
 	}
