@@ -149,6 +149,46 @@
 				}
 			}
 			break;
+		case "removePageView":
+			
+			$id = $f->getValue("id");
+			
+			$db->execQuery("UPDATE ".DB_PREFIX."category SET page_id = '0' WHERE id= '$id'");
+			
+			break;
+		case "removeSinglePageView":
+			$id = $f->getValue("id");
+			
+			$db->execQuery("UPDATE ".DB_PREFIX."category SET page_single = '0' WHERE id = '$id'");
+			
+			break;
+		case "addPageToCategoryView":
+			
+			$categories = $f->getValue("categories");
+			$what = $f->getValue("what");
+			$page_url = $f->getValue("page_url");
+			$lang_id = $f->getValue("lang_id");
+			$add_class_name = "";
+			
+			$cat_list = explode(",", $categories);
+			foreach ($cat_list as $key => $cat_id) {
+				if($cat_id != ""){
+					$db->execQuery("UPDATE ".DB_PREFIX."category SET $what = '$page_url' WHERE id = $cat_id");
+					if($what != "page_id"){
+						$add_class_name = "single_";
+					}
+						echo "<li id=\"".$add_class_name."category_".$cat_id."\">";
+							echo "<label>".$db->getValue("name", "category", "id", $cat_id)."</label>";
+							echo "<a class=\"".$add_class_name."remove_page_view\" href=\"#\" category_id=\"".$cat_id."\" lang_id=\"$lang_id\">";
+								echo "<img src=\"/kibocms/preset/actions_small/Trash.png\">";
+							echo "</a>";
+						echo "</li>";
+				}
+			} 
+			
+			
+			
+			break;
 	}
 	
 ?>

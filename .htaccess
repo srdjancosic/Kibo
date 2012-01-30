@@ -1,6 +1,7 @@
 RewriteEngine on
 
 RewriteRule ^kibocms/$ kibocms/index.php [L]
+RewriteRule ^kibocms/login.php$ kibocms/login.php [L]
 RewriteRule ^kibocms/kiboeditor/?$ kibocms/kiboeditor/index.php [L]
 RewriteRule ^kibocms/kibofinder/?$ kibocms/kibofinder/index.php [L]
 RewriteRule ^kibocms/(([^\n]+)/)*$ kibocms/$1 [L]

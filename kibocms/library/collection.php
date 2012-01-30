@@ -28,10 +28,11 @@ class Collection extends Functions {
 		$this->resultCount = mysql_num_rows($query);
 		
 		$result = array();
-		while ($data = mysql_fetch_array($query, MYSQL_ASSOC)) {
-			$result[] = new View($this->table, $data['id']);
+		if($this->resultCount !=0 ){
+			while ($data = mysql_fetch_array($query, MYSQL_ASSOC)) {
+				$result[] = new View($this->table, $data['id']);
+			}
 		}
-		
 		return $result;
 		
 	}
