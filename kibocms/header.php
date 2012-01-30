@@ -10,15 +10,21 @@
 					<a href="/kibocms/logout.php">Logout</a>
 				</li>
 				<li>
-					<?php
-					if($f->adminAllowed("code_editor", "edit")){
-					?>
-						<a href="/kibocms/emptyDatabase.php" onclick="return confirm('Are you sure?');">Empty database</a>
-					<?
-					}
-					?>
-				</li>
 				<?php
+				if($f->adminAllowed("database", "empty")){
+				?>
+					<li>
+						<a href="/kibocms/emptyDatabase.php" onclick="return confirm('Are you sure?');">Empty database</a>
+					</li>
+				<?
+				}
+				if($f->adminAllowed("database", "export")){
+				?>
+					<li>
+						<a href="/kibocms/exportDatabase.php" onclick="return confirm('Are you sure?');">Export database</a>
+					</li>
+				<?
+				}
 	        	if($f->adminAllowed("settings", "view")) {
 	        	?>
 	        		<li><a href="/kibocms/pages/settings/">Settings</a></li>

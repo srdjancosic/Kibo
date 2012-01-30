@@ -11,6 +11,7 @@
 		$db->execQuery("TRUNCATE $data[0];");
 	}
 	
+	$f->setMassage("Database emptied!");
 	$f->redirect("index.php");
 	
 ?>

@@ -53,6 +53,7 @@
 				$actions["menu"] 		= ($_POST['menu'] == "") 		? array() : $_POST['menu'];
 				$actions["user_groups"] = ($_POST['user_groups'] == "") ? array() : $_POST['user_groups'];
 				$actions["forms"] 		= ($_POST['forms'] == "")		? array() : $_POST['forms'];
+				$actions["database"] 	= ($_POST['database'] == "")	? array() : $_POST['database'];
 				$actions["tables"] 		= ($_POST['tables'] == "")		? array() : $_POST['tables'];
 				$actions["code_editor"] = ($_POST['code_editor'] == "") ? array() : $_POST['code_editor'];
 				
