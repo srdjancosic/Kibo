@@ -69,7 +69,7 @@
 		        $_SESSION['fkk'] = 1;
 		        $_SESSION["kibo_user"] = $data_user['id'];
 		        $_SESSION["kibo_user_code"] = $data_user['code'];
-		        $f->redirect("moji-podaci/");
+		        $f->redirect("/");
 
 			} else {
 				$num = $db->numRows("SELECT * FROM c_users WHERE email = '$email' AND password='$password' AND approved = '0'");
