@@ -62,16 +62,19 @@
 				<ul>
 <?php
 					if($f->adminAllowed("database", "export")){
-						echo "<li><a id=\"export_database\" href=\"exportDatabase.php\" onclick=\"return confirm('Are you sure?');\">Export database</li>";
+						echo "<li><a id=\"export_database\" href=\"exportDatabase.php\" onclick=\"return confirm('Are you sure?');\">Export database</a></li>";
 					}
 					if($f->adminAllowed("database", "empty")){
-						echo "<li><a href=\"emptyDatabase.php\" onclick=\"return confirm('Are you sure?');\">Empty database</li>";
-					}
-					if($f->adminAllowed("database", "import")){
-						
+						echo "<li><a href=\"emptyDatabase.php\" onclick=\"return confirm('Are you sure?');\">Empty database</a></li>";
 					}
 ?>
 				</ul>
+				<h2>Import database</h2>
+				<form method="POST" action="databasework.php" enctype="multipart/form-data">
+					<input type="hidden" value="import_database_externally" name="action" />
+					<input type="file" name="file_input">
+					<input type="submit" class="submit" value="Import" />
+				</form>
 			</div>
 		</div>
 	</body>
