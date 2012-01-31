@@ -1,5 +1,5 @@
 <?php
-	require("library/config.php");
+	require("../../library/config.php");
 	
 	$db = new Database();
 	$f  = new Functions();
@@ -17,9 +17,9 @@
 			$result = mysql_query('SELECT * FROM '.$table);
 			$num_fields = mysql_num_fields($result);
 			
-			$return.= 'DROP TABLE '.$table.';';
+			$return.= 'DROP TABLE '.$table.';--and of expresion';
 			$row2 = mysql_fetch_row(mysql_query('SHOW CREATE TABLE '.$table));
-			$return.= "\n\n".$row2[1].";\n\n";
+			$return.= "\n\n".$row2[1].";--and of expresion\n\n";
 			
 			for ($i = 0; $i < $num_fields; $i++) 
 			{
@@ -39,14 +39,15 @@
 							$return.= ','; 
 						}
 		    		}
-		    		$return.= ");\n";
+		    		$return.= ");--and of expresion\n";
 				}
 			}
 			$return.="\n\n\n";
 		}
 			  
 			  //save file
-			  $file = 'db-backup-'.DB_BASE.date('Ymd').'.sql';
+			  $file = 'backup\\db-backup-'.DB_BASE.date('Ymd').'.kibosql';
+			  unlink($file);
 			  $handle = fopen($file,'w+');
 			  fwrite($handle,$return);
 			  fclose($handle);

@@ -1,5 +1,5 @@
 <?php
-	require("library/config.php");
+	require("../../library/config.php");
 	
 	$db = new Database();
 	$f  = new Functions();
@@ -11,7 +11,7 @@
 		$db->execQuery("TRUNCATE $data[0];");
 	}
 	
-	$f->setMassage("Database emptied!");
+	$f->setMessage("Database emptied!");
 	$f->redirect("index.php");
 	
 ?>

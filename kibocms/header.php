@@ -11,17 +11,10 @@
 				</li>
 				<li>
 				<?php
-				if($f->adminAllowed("database", "empty")){
+				if($f->adminAllowed("database", "empty") || $f->adminsAllowed("database", "export") || $f->adminsAllowed("database", "import")){
 				?>
 					<li>
-						<a href="/kibocms/emptyDatabase.php" onclick="return confirm('Are you sure?');">Empty database</a>
-					</li>
-				<?
-				}
-				if($f->adminAllowed("database", "export")){
-				?>
-					<li>
-						<a href="/kibocms/exportDatabase.php" onclick="return confirm('Are you sure?');">Export database</a>
+						<a href="/kibocms/pages/database/" >Databse</a>
 					</li>
 				<?
 				}
