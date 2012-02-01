@@ -122,6 +122,20 @@ class View extends Functions {
 		}
 	}
 	
+	
+	function doClone() {
+		$tmpView = new View($this->table);
+		$tmpFields = $tmpView->getFields();
+		
+		foreach($tmpFields as $key => $field) {
+			
+			if($field != $this->key_field) {
+				$tmpView->$field['Field'] = $this->$field['Field'];
+			}
+		}
+		return $tmpView;
+	}
+	
 	/**
 	 * Checks if the input value is valid
 	 *
