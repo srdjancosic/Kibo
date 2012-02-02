@@ -67,7 +67,7 @@ class View extends Functions {
 		
 		Database::execQuery($SQL);
 		if($this->key_value === false)
-			$this->id = $this->insertId;
+			$this->id = mysql_insert_id();
 		
 	}
 	

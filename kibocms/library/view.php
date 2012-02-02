@@ -68,7 +68,7 @@ class View extends Functions {
 		
 		mysql_query($SQL);
 		if($this->key_value === false)
-			$this->id = $this->insertId;
+			$this->id = mysql_insert_id();
 		
 	}
 	
@@ -121,6 +121,19 @@ class View extends Functions {
 				$this->{$field} = $this->stringCleaner($value);
 			}
 		}
+	}
+	
+	function doClone() {
+		$tmpView = new View($this->table);
+		$tmpFields = $tmpView->getFields();
+		
+		foreach($tmpFields as $key => $field) {
+			
+			if($field != $this->key_field) {
+				$tmpView->$field['Field'] = $this->$field['Field'];
+			}
+		}
+		return $tmpView;
 	}
 	
 	/**

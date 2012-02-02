@@ -14,7 +14,7 @@
 				if($f->adminAllowed("database", "empty") || $f->adminsAllowed("database", "export") || $f->adminsAllowed("database", "import")){
 				?>
 					<li>
-						<a href="/kibocms/pages/database/" >Databse</a>
+						<a href="/kibocms/pages/database/" >Database</a>
 					</li>
 				<?
 				}
